@@ -1,13 +1,14 @@
-<template>
-  <router-view></router-view>
-  <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-  </nav>
-</template>
-
 <script setup>
 </script>
+
+<template class="flex-column">
+  <router-view class="flex-1"></router-view>
+  <nav class="bottom-nav">
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <router-link to="/subPage">subPage</router-link>
+  </nav>
+</template>
 
 <style>
 #app {
@@ -16,14 +17,28 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh);
 }
 
-nav {
-  text-align: center;
+.margin-reducer {
+  margin: 0;
 }
-
-nav a {
-  margin: 0 10px;
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-1 {
+  flex: 1;
+}
+.bottom-nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: flex-end;
 }
 </style>
