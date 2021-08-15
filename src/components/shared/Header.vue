@@ -6,9 +6,7 @@ const backStr = '<'
 
 <template>
   <span class="back-btn" v-if="back" @click="$router.back()">{{ backStr }}</span>
-  <div class="row">
-    <span class="title">{{ title }}</span>
-  </div>
+  <span class="title">{{ title }}</span>
 </template>
 
 <style scoped>
