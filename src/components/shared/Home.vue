@@ -20,33 +20,6 @@ export default {
     <div>
       <button @click="goLogin">Login</button>
     </div>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
-    <h2 class="title">Home</h2>
   </div>
 </template>
 
