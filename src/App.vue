@@ -1,21 +1,10 @@
-<script>
-export default {
-  methods: {
-    isNavOn() {
-      return ['/', '/catalog', '/cart', '/mine'].includes(this.$route.path)
-    }
-  }
-}
+<script setup>
+import BottomNavigator from "./components/shared/BottomNavigator.vue";
 </script>
 
 <template>
-  <router-view class="flex-1 content"></router-view>
-  <nav class="bottom-nav" v-show="isNavOn()">
-    <router-link to="/">Home</router-link>
-    <router-link to="/catalog">Catalog</router-link>
-    <router-link to="/cart">Cart</router-link>
-    <router-link to="/mine">Mine</router-link>
-  </nav>
+  <router-view class="flex-1 content"/>
+  <BottomNavigator/>
 </template>
 
 <style>
@@ -56,13 +45,12 @@ export default {
   justify-content: space-between;
 }
 
-.space-around {
-  justify-content: space-around;
+.space-evenly {
+  justify-content: space-evenly;
 }
 
-.bottom-nav {
-  display: flex;
-  justify-content: space-evenly;
+.space-around {
+  justify-content: space-around;
 }
 
 .content {

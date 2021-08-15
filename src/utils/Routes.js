@@ -1,4 +1,4 @@
-import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router';
+import {createRouter, createWebHistory} from 'vue-router';
 import Home from '../components/Home.vue';
 import Catalog from '../components/Catalog.vue';
 import Cart from '../components/Cart.vue';
@@ -9,13 +9,13 @@ import Signup from '../components/login/Signup.vue';
 import PinRecover from '../components/login/PinRecover.vue';
 
 const routes = [
-    {path: '/', component: Home},
-    {path: '/catalog', component: Catalog},
-    {path: '/cart', component: Cart},
-    {path: '/mine', component: Mine},
+    {name: 'home', path: '/', component: Home},
+    {name: 'catalog', path: '/catalog', component: Catalog},
+    {name: 'cart', path: '/cart', component: Cart},
+    {name: 'mine', path: '/mine', component: Mine},
     {name: 'login', path: '/login', component: Login, props: true},
     {name: 'login-area', path: '/login-area', component: LoginArea, props: true},
-    {path: '/signup', component: Signup},
+    {name: 'signup', path: '/signup', component: Signup},
     {name: 'pin-recover', path: '/pin-recover', component: PinRecover}
 ];
 
