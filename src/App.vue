@@ -1,12 +1,20 @@
-<script setup>
+<script>
+export default {
+  methods: {
+    isNavOn() {
+      return ['/', '/catalog', '/cart', '/me'].includes(this.$route.path)
+    }
+  }
+}
 </script>
 
-<template class="flex-column">
-  <router-view class="flex-1"></router-view>
-  <nav class="bottom-nav">
+<template>
+  <router-view class="flex-1 content"></router-view>
+  <nav class="bottom-nav" v-show="isNavOn()">
     <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/subPage">subPage</router-link>
+    <router-link to="/catalog">Catalog</router-link>
+    <router-link to="/cart">Cart</router-link>
+    <router-link to="/me">Me</router-link>
   </nav>
 </template>
 
@@ -25,20 +33,27 @@
 .margin-reducer {
   margin: 0;
 }
+
 .flex-column {
   display: flex;
   flex-direction: column;
 }
+
 .flex-row {
   display: flex;
   flex-direction: row;
 }
+
 .flex-1 {
   flex: 1;
 }
+
 .bottom-nav {
   display: flex;
   justify-content: space-evenly;
-  align-content: flex-end;
+}
+
+.content {
+  overflow: scroll;
 }
 </style>
