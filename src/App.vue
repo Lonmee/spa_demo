@@ -48,8 +48,16 @@ export default {
   flex: 1;
 }
 
+.align-items {
+  align-items: center;
+}
+
 .space-between {
   justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 .bottom-nav {
@@ -61,7 +69,27 @@ export default {
   overflow: scroll;
 }
 
-.small-font{
+.small-font {
   font-size: .8rem;
+}
+
+input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #CBCBCB;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #CBCBCB;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #CBCBCB;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #CBCBCB;
 }
 </style>
