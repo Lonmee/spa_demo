@@ -1,21 +1,21 @@
 <script setup>
 import {COUNTRIES} from "../../utils/data/Countries";
+import Header from "../shared/Header.vue";
 </script>
 
 <script>
 export default {
-  methods: {
-    back(mc) {
-      this.$route.params = {mc}
-      this.$router.back();
-    }
-  }
+  inheritAttrs: false,
+  methods: {}
 }
 </script>
 
 <template>
-  <div class="container">
-    <div id="loginArea" class="flex-row item" @click="back(c.mobileCode)" v-for="c in COUNTRIES.exports">
+  <Header title="Area selector"/>
+  <div class="content">
+    <div id="loginArea" class="flex-row item"
+         @click="$router.go(-1); $store.commit('setArea', c.mobileCode)"
+         v-for="c in COUNTRIES.exports">
       <div>
         {{ c.cnName }}
       </div>
@@ -24,7 +24,7 @@ export default {
       </div>
     </div>
   </div>
-</template>
+</template>~
 
 <style scoped>
 .item {

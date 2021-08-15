@@ -6,11 +6,7 @@ export default {
       foo: String
     }
   },
-  methods: {
-    goLogin() {
-      this.$router.push({path: '/login'})
-    }
-  }
+  methods: {}
 }
 </script>
 
@@ -18,7 +14,7 @@ export default {
   <div>
     <h2 class="title">Home</h2>
     <div>
-      <button @click="goLogin">Login</button>
+      <button @click="$router.push('login')">Login</button>
     </div>
   </div>
 </template>

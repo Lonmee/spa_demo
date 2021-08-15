@@ -1,6 +1,5 @@
 <script setup>
-defineProps
-({back: String, title: String});
+defineProps({back: String, title: String});
 const backStr = '<'
 </script>
 
@@ -12,5 +11,10 @@ const backStr = '<'
 <style scoped>
 .back-btn {
   position: absolute;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 </style>

@@ -2,7 +2,7 @@
 export default {
   methods: {
     isNavOn() {
-      return ['/', '/catalog', '/cart', '/me'].includes(this.$route.path)
+      return ['/', '/catalog', '/cart', '/mine'].includes(this.$route.path)
     }
   }
 }
@@ -14,7 +14,7 @@ export default {
     <router-link to="/">Home</router-link>
     <router-link to="/catalog">Catalog</router-link>
     <router-link to="/cart">Cart</router-link>
-    <router-link to="/me">Me</router-link>
+    <router-link to="/mine">Mine</router-link>
   </nav>
 </template>
 
@@ -48,6 +48,10 @@ export default {
   flex: 1;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .bottom-nav {
   display: flex;
   justify-content: space-evenly;
@@ -55,5 +59,9 @@ export default {
 
 .content {
   overflow: scroll;
+}
+
+.small-font{
+  font-size: .8rem;
 }
 </style>

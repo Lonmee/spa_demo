@@ -1,15 +1,18 @@
 <script setup>
-import Header from '/src/components/shared/Header.vue'
-defineProps({mobileCode: String})
+import Header from './shared/Header.vue'
 </script>
 
 <script>
-import axios from "axios";
+import {loginReq, sendVerifySmsLoginReq} from "../utils/Remote";
+import {Cookie} from "../utils/Cookie";
 
 export default {
   name: "Login",
   data() {
     return {
+      mc: this.$store.state.areaCode,
+      cdId: NaN,
+      cd: 0,
       phoneNumber: '',
       smsCode: '',
       pin: '',
@@ -17,32 +20,32 @@ export default {
     }
   },
   methods: {
-    go(path) {
-      this.$router.push({path});
-    },
     sendSms() {
-      axios.request({
-        baseURL: 'http://www.eyolo.com:8081/', url: '/security/sendVerifySmsLogin', params: {
-          u_id: this.mCode + this.phoneNumber,
-          type: 'staff'
+      let params = {
+        u_id: '+' + this.mc + '-' + this.phoneNumber,
+        type: 'staff'
+      }
+      sendVerifySmsLoginReq(params, r => {
+        console.log(r)
+      });
+      this.cd = 59;
+      this.cdId = setInterval(() => {
+        this.cd -= 1;
+        if (this.cd == 0) {
+          clearInterval(this.cdId);
         }
-      })
-          .then(r => console.log('code sent :', r))
-          .catch(e => console.log('code error: ', e));
+      }, 1000);
     },
     login() {
-      fetch('http://192.168.24.20:8081/sso/client/login', {
-        method: 'POST',
-        body: JSON.stringify({
-          sso_login_agent: "shop",
-          sso_user_id: "+86-15901424668",
-          sso_user_pwd: "ed2e19985ad3a06c810efa1e53e70832"
-        })
-      })
-          .then(r => r.json()
-              .then(j => console.log(j))
-              .catch(e => console.log('json parse error: ' + e)))
-          .catch(e => console.log(e))
+      let params = {
+        sso_login_agent: "shop",
+        sso_user_id: "+86-" + this.phoneNumber,
+        sso_user_pwd: "ed2e19985ad3a06c810efa1e53e70832" // md5 twice
+      }
+      loginReq(params, r => console.log(r));
+      let token = "GH1.1.1689020474.1484362313";
+      this.$store.commit('setToken', {token});
+      Cookie.set('token', token);
     }
   }
 }
@@ -54,13 +57,21 @@ export default {
     <div class="logo-container">
       <img id="logo" src="src/assets/LOGO@2x.png">
     </div>
-    <button @click="go('/login-area', state)">国码:+{{ mobileCode || '86' }}</button>
-    <input type="number" maxlength="11" placeholder="手机号码" v-model="phoneNumber">
-    <input type="number" placeholder="短信验证码" v-model="smsCode">
-    <button @click="sendSms" id="countdown_sms"> 获取验证码</button>
-    <button @click="go('/signup')">没有账号请点此注册</button>
-    <button @click="go('/pin-recover')">忘记密码?</button>
-    <button @click="login()"> 登录</button>
+    <div class="flex-row item">
+      <button style="width: 20%" @click="$router.push('login-area')">+{{ mc || '86' }}</button>
+      <input class="flex-1" type="number" maxlength="11" placeholder="手机号码" v-model="phoneNumber">
+    </div>
+    <div class="flex-row item" style="padding-bottom: 2px">
+      <input class="flex-1" type="number" placeholder="短信验证码" v-model="smsCode">
+      <button style="width: 40%" :disabled="cd > 0" @click="sendSms">获取验证码{{ cd > 0 ? '(' + cd + ')' : '' }}</button>
+    </div>
+    <div class="flex-row space-between small-font item flex-1" style="padding-top: 2px">
+      <router-link to="signup">没有账号请点此注册</router-link>
+      <router-link to="pin-recover">忘记密码?</router-link>
+    </div>
+    <div class="flex-row item">
+      <button class="flex-1" @click="login"> 登录</button>
+    </div>
   </div>
 </template>
 
@@ -70,6 +81,11 @@ export default {
 }
 
 .logo-container {
-  margin: 60px 0;
+  margin: 10% 0;
+}
+
+div .item {
+  padding: 10px 20px;
+  height: 40px;
 }
 </style>
