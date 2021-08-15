@@ -13,9 +13,6 @@ export default {
 <template>
   <div>
     <h2 class="title">Home</h2>
-    <div>
-      <button @click="$router.push('login')">Login</button>
-    </div>
   </div>
 </template>
 
