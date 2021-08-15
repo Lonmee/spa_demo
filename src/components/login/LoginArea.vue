@@ -6,7 +6,12 @@ import Header from "../shared/Header.vue";
 <script>
 export default {
   inheritAttrs: false,
-  methods: {}
+  methods: {
+    clickHandler(mc) {
+      this.$router.go(-1);
+      this.$route.params = {mc}
+    }
+  }
 }
 </script>
 
@@ -14,7 +19,8 @@ export default {
   <Header title="Area selector"/>
   <div class="content">
     <div id="loginArea" class="flex-row item"
-         @click="$router.go(-1); $store.commit('setArea', c.mobileCode)"
+         @click="$router.go(-1);
+      $route.params = {mc: c.mobileCode}"
          v-for="c in COUNTRIES.exports">
       <div>
         {{ c.cnName }}

@@ -23,3 +23,8 @@ export const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+
+router.beforeEach((to, from) => {
+    // for area back
+    from.params.hasOwnProperty('mc') && (to.params = from.params);
+});

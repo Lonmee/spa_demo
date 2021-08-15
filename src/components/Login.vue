@@ -1,5 +1,9 @@
 <script setup>
 import Header from './shared/Header.vue'
+
+const props = defineProps({
+  mc: String
+})
 </script>
 
 <script>
@@ -10,7 +14,6 @@ export default {
   name: "Login",
   data() {
     return {
-      mc: this.$store.state.areaCode,
       cdId: NaN,
       cd: 0,
       phoneNumber: '',
@@ -22,11 +25,11 @@ export default {
   methods: {
     sendSms() {
       let params = {
-        u_id: '+' + this.mc + '-' + this.phoneNumber,
+        u_id: '+' + (this.mc || '86') + '-' + this.phoneNumber,
         type: 'staff'
       }
       sendVerifySmsLoginReq(params, r => {
-        console.log(r)
+        this.smsCode = '1234';
       });
       this.cd = 59;
       this.cdId = setInterval(() => {
@@ -36,16 +39,19 @@ export default {
         }
       }, 1000);
     },
+
     login() {
       let params = {
         sso_login_agent: "shop",
-        sso_user_id: "+86-" + this.phoneNumber,
+        sso_user_id: '+' + (this.mc || '86') + '-' + this.phoneNumber,
         sso_user_pwd: "ed2e19985ad3a06c810efa1e53e70832" // md5 twice
       }
-      loginReq(params, r => console.log(r));
-      let token = "GH1.1.1689020474.1484362313";
-      this.$store.commit('setToken', {token});
-      Cookie.set('token', token);
+      loginReq(params, r => {
+        let token = "GH1.1.1689020474.1484362313";
+        this.$store.commit('setToken', {token});
+        Cookie.set('token', token);
+        this.$router.go(-1);
+      });
     }
   }
 }

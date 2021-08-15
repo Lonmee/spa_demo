@@ -4,6 +4,7 @@ const baseURL = 'http://www.eyolo.com:8081/';
 
 export function sendVerifySmsLoginReq(params, cb = null) {
     console.log('sendVerifySmsLoginReq called', params, cb);
+    cb();
     // axios.request({
     //     baseURL, url: '/security/sendVerifySmsLogin', params
     // })
@@ -15,6 +16,7 @@ export function sendVerifySmsLoginReq(params, cb = null) {
 
 export function loginReq(params, cb = null) {
     console.log('loginReq called', params, cb);
+    cb();
     // axios.request({
     //     method: 'POST',
     //     data: JSON.stringify(params)

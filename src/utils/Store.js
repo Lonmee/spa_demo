@@ -5,7 +5,6 @@ export const store = createStore({
         return {
             foo: 0,
             token: '',
-            areaCode: ''
         }
     },
     mutations: {
@@ -14,9 +13,6 @@ export const store = createStore({
         },
         setToken(state, payload) {
             state.token = payload.token;
-        },
-        setArea(state, mobileCode) {
-            state.areaCode = mobileCode;
         }
     }
 })
