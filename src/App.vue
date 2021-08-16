@@ -1,10 +1,8 @@
 <script setup>
 import BottomNavigator from "./components/shared/BottomNavigator.vue";
-import SearchHeader from "./components/shared/SearchHeader.vue";
 </script>
 
 <template>
-  <SearchHeader/>
   <router-view class="flex-1 content" @dblclick.prevent/>
   <BottomNavigator/>
 </template>
@@ -83,6 +81,7 @@ import SearchHeader from "./components/shared/SearchHeader.vue";
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 

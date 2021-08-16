@@ -23,6 +23,8 @@
   width: 100%;
   background-color: rgba(255, 255, 255, .8);
   padding: 6px 0;
+  box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, .6);
+  -webkit-box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, .6);
 }
 
 .search-bar {
