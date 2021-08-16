@@ -61,6 +61,10 @@ import BottomNavigator from "./components/shared/BottomNavigator.vue";
   font-size: .8rem;
 }
 
+.box-shadow {
+  box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, .6);
+  -webkit-box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, .6);
+}
 
 /*为导航栏+状态栏的高度 88px*/
 /*如果未竖屏时为0*/
