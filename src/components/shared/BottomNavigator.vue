@@ -19,6 +19,7 @@ const isNavOn = n => navNames.includes(n)
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .8);
+  padding: 6px 0;
 }
 </style>

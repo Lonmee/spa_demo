@@ -1,8 +1,10 @@
 <script setup>
 import BottomNavigator from "./components/shared/BottomNavigator.vue";
+import SearchHeader from "./components/shared/SearchHeader.vue";
 </script>
 
 <template>
+  <SearchHeader/>
   <router-view class="flex-1 content" @dblclick.prevent/>
   <BottomNavigator/>
 </template>
@@ -37,7 +39,7 @@ import BottomNavigator from "./components/shared/BottomNavigator.vue";
   flex: 1;
 }
 
-.align-items {
+.align-items-center {
   align-items: center;
 }
 
