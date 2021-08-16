@@ -11,6 +11,12 @@ export default {
 <template>
   <div class="jus">
     <h2 class="title"><img src="src/assets/logo.png"></h2>
+    <h2 class="title"><img src="src/assets/logo.png"></h2>
+    <h2 class="title"><img src="src/assets/logo.png"></h2>
+    <h2 class="title"><img src="src/assets/logo.png"></h2>
+    <h2 class="title"><img src="src/assets/logo.png"></h2>
+    <h2 class="title"><img src="src/assets/logo.png"></h2>
+    <h2 class="title"><img src="src/assets/logo.png"></h2>
     <div class="flex-row space-around align-items">
       <div class="search-bar">
         <img/>

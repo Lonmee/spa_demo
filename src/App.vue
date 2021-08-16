@@ -3,7 +3,7 @@ import BottomNavigator from "./components/shared/BottomNavigator.vue";
 </script>
 
 <template>
-  <router-view class="flex-1 content"/>
+  <router-view class="flex-1 content padding-bottom"/>
   <BottomNavigator/>
 </template>
 
@@ -19,8 +19,9 @@ import BottomNavigator from "./components/shared/BottomNavigator.vue";
   height: calc(100vh);
 }
 
-.margin-reducer {
+.margin-padding-reducer {
   margin: 0;
+  padding: 0;
 }
 
 .flex-column {
@@ -59,6 +60,28 @@ import BottomNavigator from "./components/shared/BottomNavigator.vue";
 
 .small-font {
   font-size: .8rem;
+}
+
+
+/*为导航栏+状态栏的高度 88px*/
+/*如果未竖屏时为0*/
+/*如果未竖屏时为0*/
+/*为底下圆弧的高度 34px*/
+
+/* 全局定义一个变量*/
+/*--ipxBottom: 0px;*/
+/*--ipxBottom: constant( safe-area-inset-bottom); !* 兼容 iOS < 11.2 *!*/
+/*--ipxBottom: env(safe-area-inset-bottom);!* 兼容 iOS >= 11.2 *!*/
+/*padding-bottom: var(--ipxBottom)*/
+.safe-area-inset {
+  padding-top: constant(safe-area-inset-top);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 input::-webkit-input-placeholder {
