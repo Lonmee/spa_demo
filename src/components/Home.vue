@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <div class="jus">
+  <div class="safe-area-inset">
     <h2 class="title"><img src="src/assets/logo.png"></h2>
     <h2 class="title"><img src="src/assets/logo.png"></h2>
     <h2 class="title"><img src="src/assets/logo.png"></h2>
@@ -58,5 +58,9 @@ export default {
 .no-border {
   border: none;
   background-color: #F3F5F7;
+}
+
+input:focus{
+  outline:none;
 }
 </style>

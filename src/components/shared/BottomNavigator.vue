@@ -6,10 +6,19 @@ const isNavOn = n => navNames.includes(n)
 </script>
 
 <template>
-  <nav class="flex-row space-evenly" v-show="isNavOn($route.name)">
+  <nav class="flex-row space-evenly btm-nav" v-show="isNavOn($route.name)">
     <router-link to="/">Home</router-link>
     <router-link to="/catalog">Catalog</router-link>
     <router-link to="/cart">Cart</router-link>
     <router-link to="/mine">Mine</router-link>
   </nav>
 </template>
+
+<style scoped>
+.btm-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+</style>

@@ -3,7 +3,7 @@ import BottomNavigator from "./components/shared/BottomNavigator.vue";
 </script>
 
 <template>
-  <router-view class="flex-1 content padding-bottom"/>
+  <router-view class="flex-1 content" @dblclick.prevent/>
   <BottomNavigator/>
 </template>
 
@@ -16,7 +16,6 @@ import BottomNavigator from "./components/shared/BottomNavigator.vue";
   color: #2c3e50;
   display: flex;
   flex-direction: column;
-  height: calc(100vh);
 }
 
 .margin-padding-reducer {
@@ -82,6 +81,7 @@ import BottomNavigator from "./components/shared/BottomNavigator.vue";
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
+  margin-bottom: 20px;
 }
 
 input::-webkit-input-placeholder {
