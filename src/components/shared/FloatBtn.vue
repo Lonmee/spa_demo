@@ -31,7 +31,7 @@ const pullIn = event => console.log(event)
   user-select: none;
 }
 
-div:active {
+div.btn:active {
   right: 2px;
 }
 
