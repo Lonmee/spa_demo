@@ -3,6 +3,10 @@ import {router} from "../../utils/Routes";
 
 const navNames = router.getRoutes().filter((r, i) => i < 4).map(r => r.name);
 const isNavOn = n => navNames.includes(n)
+defineExpose({
+  navNames,
+  isNavOn
+})
 </script>
 
 <template>

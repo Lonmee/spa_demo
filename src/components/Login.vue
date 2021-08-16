@@ -1,8 +1,11 @@
 <script setup>
 import Header from './shared/Header.vue'
 
-const props = defineProps({
-  mc: String
+const post = await fetch(`/api/post/1`).then((r) => r.json())
+
+
+const props = withDefaults(defineProps<Props>(), {
+  mc: '86'
 })
 </script>
 

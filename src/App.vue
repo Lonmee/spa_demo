@@ -1,10 +1,13 @@
 <script setup>
 import BottomNavigator from "./components/shared/BottomNavigator.vue";
+
+let bn;
+const log = bn => console.log(bn, bn.navNames, bn.isNavOn);
 </script>
 
 <template>
-  <router-view class="flex-1 content" @dblclick.prevent/>
-  <BottomNavigator/>
+  <router-view class="flex-1 content" @dblclick.prevent @click="log(bn)"/>
+  <BottomNavigator ref="bn"/>
 </template>
 
 <style>
