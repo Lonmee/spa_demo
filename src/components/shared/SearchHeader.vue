@@ -60,3 +60,9 @@ input:focus {
   outline: none;
 }
 </style>
+
+<style>
+.top-search-header-margin {
+  margin-top: 36px;
+}
+</style>

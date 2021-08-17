@@ -4,7 +4,7 @@ import FloatBtn from "./shared/FloatBtn.vue";
 </script>
 
 <template>
-  <div class="safe-area-inset">
+  <div class="btm-nav-margin top-search-header-margin">
     <SearchHeader/>
     <h2 class="title"><img src="src/assets/logo.png"></h2>
     <h2 class="title"><img src="src/assets/logo.png"></h2>
