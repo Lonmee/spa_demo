@@ -25,6 +25,11 @@ body {
 }
 
 /* fixed using */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 .fixed-btm {
   position: fixed;
   bottom: 0;

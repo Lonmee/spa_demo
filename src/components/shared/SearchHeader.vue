@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-row space-around align-items-center top-nav box-shadow">
+  <div id="search-header" class="fixed-top flex-row space-around align-items-center alpha-white-bg box-shadow">
     <div class="search-bar">
       <img/>
       <input class="no-border input" type="text" placeholder="搜索产品/店铺">
@@ -17,11 +17,7 @@
 </template>
 
 <style scoped>
-.top-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, .8);
+#search-header {
   padding: 6px 0;
 }
 

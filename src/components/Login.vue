@@ -54,8 +54,8 @@ export default {
 </script>
 
 <template>
+  <Header back="true" title="Login"/>
   <div class="flex-column">
-    <Header back="true" title="Login"/>
     <div class="logo-container">
       <img id="logo" src="src/assets/LOGO@2x.png">
     </div>
