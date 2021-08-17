@@ -48,12 +48,12 @@ const log = bn => console.log(bn, bn.navNames, bn.isNavOn);
   justify-content: space-between;
 }
 
-.space-evenly {
-  justify-content: space-evenly;
-}
-
 .space-around {
   justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
 }
 
 .content {
