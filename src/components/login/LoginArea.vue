@@ -5,19 +5,13 @@ import Header from "../shared/Header.vue";
 
 <script>
 export default {
-  inheritAttrs: false,
-  methods: {
-    clickHandler(mc) {
-      this.$router.go(-1);
-      this.$route.params = {mc}
-    }
-  }
+  inheritAttrs: false
 }
 </script>
 
 <template>
   <Header title="Area selector"/>
-  <div class="content">
+  <div class="top-header-margin">
     <div id="loginArea" class="flex-row item"
          @click="$router.go(-1);
       $route.params = {mc: c.mobileCode}"

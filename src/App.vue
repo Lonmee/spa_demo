@@ -1,13 +1,10 @@
 <script setup>
-import BottomNavigator from "./components/shared/BtmNav.vue";
-
-let bn;
-const log = bn => console.log(bn, bn.navNames, bn.isNavOn);
+import BtmNav from "./components/shared/BtmNav.vue";
 </script>
 
 <template>
-  <router-view class="flex-1 content" @dblclick.prevent @click="log(bn)"/>
-  <BottomNavigator ref="bn"/>
+  <router-view class="flex-1 content" @dblclick.prevent/>
+  <btm-nav/>
 </template>
 
 <style>
@@ -30,6 +27,7 @@ body {
   top: 0;
   width: 100%;
 }
+
 .fixed-btm {
   position: fixed;
   bottom: 0;
@@ -41,22 +39,28 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .flex-row {
   display: flex;
   flex-direction: row;
 }
+
 .flex-1 {
   flex: 1;
 }
+
 .align-items-center {
   align-items: center;
 }
+
 .space-between {
   justify-content: space-between;
 }
+
 .space-around {
   justify-content: space-around;
 }
+
 .space-evenly {
   justify-content: space-evenly;
 }
@@ -65,8 +69,29 @@ body {
 .alpha-white-bg {
   background-color: rgba(255, 255, 255, .8);
 }
+
 .box-shadow {
   box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, .6);
   -webkit-box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, .6);
+}
+
+input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #CBCBCB;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #CBCBCB;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #CBCBCB;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #CBCBCB;
 }
 </style>

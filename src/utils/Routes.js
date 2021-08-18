@@ -1,22 +1,22 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import Home from '../components/Home.vue';
-import Catalog from '../components/Catalog.vue';
-import Cart from '../components/Cart.vue';
-import Mine from '../components/Mine.vue';
-import Login from '../components/Login.vue';
-import LoginArea from '../components/login/LoginArea.vue';
-import Signup from '../components/login/Signup.vue';
-import PinRecover from '../components/login/PinRecover.vue';
 
 const routes = [
+    // stay
     {name: 'home', path: '/', component: Home},
-    {name: 'catalog', path: '/catalog', component: Catalog},
-    {name: 'cart', path: '/cart', component: Cart},
-    {name: 'mine', path: '/mine', component: Mine},
-    {name: 'login', path: '/login', component: Login, props: true},
-    {name: 'login-area', path: '/login-area', component: LoginArea, props: true},
-    {name: 'signup', path: '/signup', component: Signup},
-    {name: 'pin-recover', path: '/pin-recover', component: PinRecover}
+    // lazy
+    {name: 'catalog', path: '/catalog', component: () => import('../components/Catalog.vue')},
+    {name: 'cart', path: '/cart', component: () => import('../components/Cart.vue')},
+    {name: 'mine', path: '/mine', component: () => import('../components/Mine.vue')},
+    {name: 'login', path: '/login', component: () => import('../components/Login.vue'), props: true},
+    {
+        name: 'login-area',
+        path: '/login-area',
+        component: () => import('../components/login/LoginArea.vue'),
+        props: true
+    },
+    {name: 'signup', path: '/signup', component: () => import('../components/login/Signup.vue')},
+    {name: 'pin-recover', path: '/pin-recover', component: () => import('../components/login/PinRecover.vue')}
 ];
 
 export const router = createRouter({
