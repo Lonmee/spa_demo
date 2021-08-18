@@ -1,5 +1,5 @@
 <script setup>
-import BtmNav from "./components/shared/BtmNav.vue";
+import BtmNav from "./views/shared/BtmNav.vue";
 </script>
 
 <template>
