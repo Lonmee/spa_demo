@@ -6,11 +6,23 @@ const isShowNav = n => navNames.includes(n);
 </script>
 
 <template>
-  <div id="nav" class="fixed-btm flex-row space-evenly alpha-white-bg box-shadow" v-show="isShowNav($route.name)">
-    <router-link to="/">Home</router-link>
-    <router-link to="/catalog">Catalog</router-link>
-    <router-link to="/cart">Cart</router-link>
-    <router-link to="/mine">Mine</router-link>
+  <div
+    v-show="isShowNav($route.name)"
+    id="nav"
+    class="fixed-btm flex-row space-evenly alpha-white-bg box-shadow"
+  >
+    <router-link to="/">
+      Home
+    </router-link>
+    <router-link to="/catalog">
+      Catalog
+    </router-link>
+    <router-link to="/cart">
+      Cart
+    </router-link>
+    <router-link to="/mine">
+      Mine
+    </router-link>
   </div>
 </template>
 
