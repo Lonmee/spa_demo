@@ -3,6 +3,12 @@ defineProps({back: String, title: String});
 const backStr = '<'
 </script>
 
+<script>
+export default {
+  name: 'Header'
+}
+</script>
+
 <template>
   <div class="fixed-top flex-row alpha-white-bg box-shadow" style="padding: 6px 0">
     <a id="back-btn" v-if="back" @click="$router.back()">{{ backStr }}</a>
