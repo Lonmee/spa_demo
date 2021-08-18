@@ -11,7 +11,7 @@ const props = defineProps({
 </script>
 
 <script>
-import Remote from "../utils/Remote";
+import {loginReq, sendVerifySmsLoginReq} from "../utils/Remote";
 import {Cookie} from "../utils/Cookie";
 
 export default {
@@ -35,7 +35,7 @@ export default {
         u_id: '+' + (this.mc || '86') + '-' + this.phoneNumber,
         type: 'staff'
       }
-      Remote.sendVerifySmsLoginReq(params)
+      sendVerifySmsLoginReq(params)
           .then(r => this.smsCode = r)
           .catch(e => console.log('error: ' + e));
       this.cd = 59;
@@ -54,7 +54,7 @@ export default {
         sso_user_id: '+' + (this.mc || '86') + '-' + this.phoneNumber,
         sso_user_pwd: "ed2e19985ad3a06c810efa1e53e70832" // md5 twice
       }
-      Remote.loginReq(params)
+      loginReq(params)
           .then(r => {
             r;
             let token = "GH1.1.1689020474.1484362313";
