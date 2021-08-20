@@ -1,5 +1,5 @@
 <script setup>
-import Header from "./shared/Header.vue";
+
 // const post = await fetch(`/api/post/1`).then((r) => r.json())
 
 // const props = withDefaults(defineProps(), {
@@ -11,6 +11,7 @@ const props = defineProps({
 </script>
 
 <script>
+import Header from "./shared/Header.vue";
 import {loginReq, sendVerifySmsLoginReq} from "../utils/Remote";
 import {Cookie} from "../utils/Cookie";
 
