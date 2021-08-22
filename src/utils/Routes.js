@@ -27,5 +27,5 @@ export const router = createRouter({
 
 router.beforeEach((to, from) => {
     // for area back
-    to.params.mc && (to.params.mc = from.params.mc);
+    from.params.mc && (to.params.mc = from.params.mc);
 });

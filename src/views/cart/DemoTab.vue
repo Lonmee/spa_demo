@@ -1,13 +1,10 @@
 <template>
-  <div>
-    {{ product.value }}
-  </div>
+  <div class="demo-tab">Archive component</div>
 </template>
 
 <script>
 export default {
-  name: "ProductItem",
-  inject: ['product'],
+  name: "DemoTab"
 }
 </script>
 
