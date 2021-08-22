@@ -5,7 +5,7 @@ import FloatBtn from "./shared/FloatBtn.vue";
 
 <template>
   <div class="btm-nav-margin top-search-header-margin">
-    <SearchHeader />
+    <SearchHeader/>
     <h2 class="title">
       <img src="src/assets/logo.png">
     </h2>
@@ -42,7 +42,6 @@ import FloatBtn from "./shared/FloatBtn.vue";
     <h2 class="title">
       <img src="src/assets/logo.png">
     </h2>
-    <FloatBtn />
+    <FloatBtn/>
   </div>
 </template>
-

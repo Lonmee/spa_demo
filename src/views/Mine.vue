@@ -10,10 +10,12 @@
 <script>
 
 import {defineAsyncComponent} from "vue";
+import Header from "./shared/Header.vue";
 
 export default {
   name: "Mine",
   components: {
+    Header,
     AsyncComp: defineAsyncComponent(() => import("./mine/AsyncComp.vue"))
   },
   setup(p, c) {
