@@ -21,13 +21,13 @@
 </template>
 
 <script>
-import {computed, ref} from "vue";
 import CompA from "./cart/CompA.vue";
 import CompB from "./cart/CompB.vue";
 import DemoTab from "./cart/DemoTab.vue";
 import TabHome from "./cart/TabHome.vue";
 import TabPosts from "./cart/TabPosts.vue";
 import TabArchive from "./cart/TabArchive.vue";
+import {computed} from "vue";
 
 export default {
   name: "Cart",
