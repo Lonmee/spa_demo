@@ -2,7 +2,7 @@
   <div>
     <h2>Cart</h2>
     <input v-model="product"/>
-    <CompA/>
+    <CompA xx="oo"/>
     <hr/>
     <div id="dynamic-component-demo" class="demo">
       <button
@@ -48,6 +48,9 @@ export default {
     return {
       product: computed(() => this.product)
     }
+  },
+  methods: {
+
   }
 }
 

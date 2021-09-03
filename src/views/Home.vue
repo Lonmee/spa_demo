@@ -7,40 +7,40 @@ import FloatBtn from "./shared/FloatBtn.vue";
   <div class="btm-nav-margin top-search-header-margin">
     <SearchHeader/>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt="">
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <h2 class="title">
-      <img src="src/assets/logo.png">
+      <img src="src/assets/logo.png" alt=""/>
     </h2>
     <FloatBtn/>
   </div>

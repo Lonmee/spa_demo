@@ -19,7 +19,7 @@ export default {
     AsyncComp: defineAsyncComponent(() => import("./mine/AsyncComp.vue"))
   },
   setup(p, c) {
-    console.log(p, c);
+    console.log('from mine', p, c);
   }
 }
 </script>

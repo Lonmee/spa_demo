@@ -10,11 +10,16 @@
 </template>
 
 <script>
-import {inject} from "vue";
+import {inject, toRef} from "vue";
 
 export default {
   name: "CompB",
-  inject: ["product"]
+  inject: ["product"],
+  data() {
+    return {
+      b: 2
+    }
+  }
 }
 </script>
 

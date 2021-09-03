@@ -1,10 +1,21 @@
 import axios from "axios";
 
-const baseURL = 'http://www.eyolo.com:8081/';
+const baseURL = 'http://localhost:8080/';
 
 async function sendVerifySmsLoginReq(params) {
     axios.request({
         baseURL, url: '/security/sendVerifySmsLogin', params
+    })
+        .then(r => r.json())
+        .catch(e => console.log(e));
+}
+
+async function signUpReq(params) {
+    axios.request({
+        method: 'POST',
+        baseURL,
+        url: '1/users/',
+        data: JSON.stringify(params)
     })
         .then(r => r.json())
         .catch(e => console.log(e));
@@ -21,4 +32,4 @@ async function loginReq(params) {
         .catch(e => console.log(e));
 }
 
-export {sendVerifySmsLoginReq, loginReq};
+export {sendVerifySmsLoginReq, loginReq, signUpReq};
