@@ -3,12 +3,23 @@ import Header from "../shared/Header.vue";
 </script>
 
 <script>
-import {signUpReq} from "../../utils/Remote";
+import {Cookie} from "../../utils/Cookie";
+import {API} from "../../utils/Remote";
 
 export default {
   methods: {
-    signupHandler() {
-      signUpReq({name: 'lonmee', age: 40, sex: 'male'})
+    signUP() {
+      const params = {name: 'lonmee', age: 40, sex: 'male'};
+      const id = '';
+      this.axios.post(API.USERS_V1 + id, params)
+          .then(resp => {
+            console.log(resp);
+            // let token = "GH1.1.1689020474.1484362313";
+            // this.$store.commit('setToken', {token});
+            Cookie.set('token', token);
+            // this.$router.go(-1);
+          })
+          .catch(console.error);
     }
   }
 }
@@ -18,7 +29,7 @@ export default {
   <div>
     <Header back="a" title="Signup"/>
     <div class="flex-column top-header-margin">
-      <button @click="signupHandler"> signup</button>
+      <button @click="signUP">signup</button>
     </div>
   </div>
 </template>
