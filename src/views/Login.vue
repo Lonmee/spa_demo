@@ -55,7 +55,7 @@ export default {
     <Header back="true" title="Login"/>
     <div class="flex-column top-header-margin">
       <div class="logo-container">
-        <img id="logo" src="../localAssets/img/logo@2x.png">
+        <img id="logo" src="../appAssets/img/logo@2x.png">
       </div>
       <div class="flex-row item">
         <button style="width: 20%" @click="$router.push('login-area')">

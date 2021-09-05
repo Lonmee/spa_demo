@@ -5,6 +5,7 @@ import Header from "../shared/Header.vue";
 <script>
 import {Cookie} from "../../utils/Cookie";
 import {API} from "../../utils/Remote";
+import axios from "axios";
 
 export default {
   methods: {
@@ -13,10 +14,10 @@ export default {
       const id = '';
       this.axios.post(API.USERS_V1 + id, params)
           .then(resp => {
-            console.log(resp);
+            console.log(resp.data);
             // let token = "GH1.1.1689020474.1484362313";
             // this.$store.commit('setToken', {token});
-            Cookie.set('token', token);
+            // Cookie.set('token', token);
             // this.$router.go(-1);
           })
           .catch(console.error);
