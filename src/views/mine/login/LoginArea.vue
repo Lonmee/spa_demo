@@ -1,6 +1,6 @@
 <script setup>
-import {COUNTRIES} from "../../utils/data/Countries";
-import Header from "../shared/Header.vue";
+import {COUNTRIES} from "../../../utils/data/Countries";
+import Header from "../../shared/Header.vue";
 </script>
 
 <script>

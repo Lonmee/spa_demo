@@ -1,16 +1,18 @@
 import {createStore} from "vuex";
+import {Cookie} from "./Cookie";
 
 export const store = createStore({
     state: {
-        foo: 0,
-        token: '',
+        token: Cookie.get('token'),
     },
     mutations: {
-        increment(state) {
-            state.foo++
-        },
         setToken(state, payload) {
             state.token = payload.token;
+            Cookie.set('token', payload.token)
+        },
+        clearToken(state) {
+            state.token = '';
+            Cookie.clear('token');
         }
     }
 })

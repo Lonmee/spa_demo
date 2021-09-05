@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import Home from '../views/Home.vue';
-import Login from '../views/Login.vue';
+import Login from '../views/mine/login/Login.vue';
 
 const routes = [
     // stay
@@ -9,15 +9,15 @@ const routes = [
     {name: 'catalog', path: '/catalog', component: () => import('../views/Catalog.vue')},
     {name: 'cart', path: '/cart', component: () => import('../views/Cart.vue')},
     {name: 'mine', path: '/mine', component: () => import('../views/Mine.vue')},
-    {name: 'login', path: '/login', component: () => import('../views/Login.vue'), props: true},
+    {name: 'login', path: '/login', component: () => import('../views/mine/login/Login.vue'), props: true},
     {
         name: 'login-area',
         path: '/login-area',
-        component: () => import('../views/login/LoginArea.vue'),
+        component: () => import('../views/mine/login/LoginArea.vue'),
         props: true
     },
-    {name: 'signup', path: '/signup', component: () => import('../views/login/Signup.vue')},
-    {name: 'pin-recover', path: '/pin-recover', component: () => import('../views/login/PinRecover.vue')}
+    {name: 'signup', path: '/signup', component: () => import('../views/mine/login/Signup.vue')},
+    {name: 'pin-recover', path: '/pin-recover', component: () => import('../views/mine/login/PinRecover.vue')}
 ];
 
 export const router = createRouter({

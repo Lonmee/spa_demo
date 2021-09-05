@@ -49,9 +49,7 @@ export default {
       product: computed(() => this.product)
     }
   },
-  methods: {
-
-  }
+  methods: {}
 }
 
 </script>

@@ -1,5 +1,5 @@
 <script setup>
-import Header from "../shared/Header.vue";
+import Header from "../../shared/Header.vue";
 </script>
 
 <script>
