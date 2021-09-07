@@ -7,19 +7,21 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.21.2",
-    "element-plus": "^1.1.0-beta.8",
-    "vue": "^3.2.3",
-    "vue-axios": "^3.2.5",
-    "vue-i18n": "^8.25.0",
-    "vue-router": "^4.0.11",
-    "vuex": "^4.0.2"
+    "axios": "latest",
+    "element-plus": "latest",
+    "md5": "latest",
+    "vue": "next",
+    "vue-axios": "latest",
+    "vue-i18n": "next",
+    "vue-router": "next",
+    "vuex": "next"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.4.0",
-    "@vue/compiler-sfc": "^3.2.3",
-    "eslint-plugin-vue": "^7.17.0",
-    "vite": "^2.5.0"
+    "@vitejs/plugin-vue": "latest",
+    "@vue/compiler-sfc": "latest",
+    "eslint": "latest",
+    "eslint-plugin-vue": "latest",
+    "vite": "latest"
   },
   "license": "ISC"
 }

@@ -31,12 +31,21 @@ import {computed} from "vue";
 
 export default {
   name: "Cart",
-  components: {CompA, CompB, DemoTab, TabHome, TabPosts, TabArchive},
+  components: {
+    CompA,
+    CompB,
+    DemoTab,
+    TabHome,
+    TabPosts,
+    TabArchive
+  },
   data() {
     return {
       product: '',
       currentTab: 'Home',
-      tabs: ['Home', 'Posts', 'Archive']
+      tabs: ['Home',
+        'Posts',
+        'Archive']
     }
   },
   computed: {
