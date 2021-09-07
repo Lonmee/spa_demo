@@ -25,7 +25,7 @@ import TabHome from "./cart/TabHome.vue";
 import TabPosts from "./cart/TabPosts.vue";
 import TabArchive from "./cart/TabArchive.vue";
 
-const product = [];
+const product = ref('');
 provide('product', product);
 
 const tabs = ['Home',
