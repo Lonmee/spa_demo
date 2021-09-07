@@ -2,7 +2,7 @@
   <div>
     <h2>Cart</h2>
     <input v-model="product"/>
-    <CompA xx="oo"/>
+    <CompA/>
     <hr/>
     <div id="dynamic-component-demo" class="demo">
       <button
@@ -14,53 +14,38 @@
         {{ tab }}
       </button>
       <keep-alive>
-        <component :is="currentTabComponent" class="tab"></component>
+        <component :is="currentTabComponent"/>
       </keep-alive>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import CompA from "./cart/CompA.vue";
-import CompB from "./cart/CompB.vue";
-import DemoTab from "./cart/DemoTab.vue";
+import {computed, provide, ref} from "vue";
+
 import TabHome from "./cart/TabHome.vue";
 import TabPosts from "./cart/TabPosts.vue";
 import TabArchive from "./cart/TabArchive.vue";
-import {computed} from "vue";
 
+const product = [];
+provide('product', product);
+
+const tabs = ['Home',
+  'Posts',
+  'Archive']
+const currentTab = ref('Home');
+let currentTabComponent = computed(() => 'tab-' + currentTab.value.toLowerCase())
+</script>
+
+<script>
 export default {
-  name: "Cart",
   components: {
-    CompA,
-    CompB,
-    DemoTab,
     TabHome,
     TabPosts,
     TabArchive
-  },
-  data() {
-    return {
-      product: '',
-      currentTab: 'Home',
-      tabs: ['Home',
-        'Posts',
-        'Archive']
-    }
-  },
-  computed: {
-    currentTabComponent() {
-      return 'tab-' + this.currentTab.toLowerCase()
-    }
-  },
-  provide() {
-    return {
-      product: computed(() => this.product)
-    }
-  },
-  methods: {}
+  }
 }
-
 </script>
 
 <style scoped>
@@ -94,6 +79,7 @@ export default {
   background: #e0e0e0;
 }
 </style>
+
 <style>
 .demo-tab {
   border: 1px solid #ccc;

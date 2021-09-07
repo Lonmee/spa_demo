@@ -6,21 +6,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import CompB from "./CompB.vue";
-
-export default {
-  name: "CompA",
-  components: {CompB},
-  props: {
-    xx: String
-  },
-  data() {
-    return {
-      a: 1
-    }
-  }
-}
 </script>
 
 <style scoped>

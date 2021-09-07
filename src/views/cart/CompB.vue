@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="demo-tab">
     <p>This is comp b</p>
@@ -9,18 +5,10 @@
   </div>
 </template>
 
-<script>
-import {inject, toRef} from "vue";
+<script setup>
+import {inject} from "vue";
 
-export default {
-  name: "CompB",
-  inject: ["product"],
-  data() {
-    return {
-      b: 2
-    }
-  }
-}
+const product = inject("product");
 </script>
 
 <style scoped>
