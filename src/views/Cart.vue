@@ -13,9 +13,7 @@
       >
         {{ tab }}
       </button>
-      <keep-alive>
-        <component :is="currentTabComponent"/>
-      </keep-alive>
+      <component :is="currentTabComponent"/>
     </div>
   </div>
 </template>
@@ -23,7 +21,6 @@
 <script setup>
 import CompA from "./cart/CompA.vue";
 import {computed, provide, ref} from "vue";
-
 import TabHome from "./cart/TabHome.vue";
 import TabPosts from "./cart/TabPosts.vue";
 import TabArchive from "./cart/TabArchive.vue";
@@ -34,19 +31,26 @@ provide('product', product);
 const tabs = ['Home',
   'Posts',
   'Archive']
+const components = [TabHome,
+  TabPosts,
+  TabArchive];
 const currentTab = ref('Home');
-let currentTabComponent = computed(() => 'tab-' + currentTab.value.toLowerCase())
+const currentTabComponent = computed(() => components[tabs.indexOf(currentTab.value)]);
 </script>
 
-<script>
-export default {
-  components: {
-    TabHome,
-    TabPosts,
-    TabArchive
-  }
-}
-</script>
+<!--<script>-->
+<!--import TabHome from "./cart/TabHome.vue";-->
+<!--import TabPosts from "./cart/TabPosts.vue";-->
+<!--import TabArchive from "./cart/TabArchive.vue";-->
+
+<!--export default {-->
+<!--  components: {-->
+<!--    TabHome,-->
+<!--    TabPosts,-->
+<!--    TabArchive-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
 
 <style scoped>
 .demo {
