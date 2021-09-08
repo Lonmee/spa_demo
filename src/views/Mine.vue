@@ -1,5 +1,5 @@
 <template>
-  <div class="top-header-margin">
+  <div class="top-header-margin flex-column align-content-center">
     <Header title="Mine"/>
     <div class="flex-row space-evenly" v-if="token === ''">
       <button @click="$router.push('login')">Login</button>
