@@ -11,6 +11,7 @@
     </div>
     <hr>
     <AsyncComp/>
+    <address>北京石景山 古城南里一号楼703</address>
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 <script setup>
 import Header from "../../shared/Header.vue";
+
 const props = defineProps({
   mc: String
 })
@@ -77,7 +78,11 @@ export default {
         <button style="width: 40%"
                 :disabled="cd > 0"
                 @click="sendSms">
-          获取验证码{{ cd > 0 ? '(' + cd + ')' : '' }}
+          获取验证码{{
+            cd > 0 ?
+                '(' + cd + ')' :
+                ''
+          }}
         </button>
       </div>
       <div class="flex-row space-between small-font item flex-1"

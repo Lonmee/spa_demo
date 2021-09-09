@@ -41,7 +41,6 @@ import {API} from "../../../utils/Remote";
 import axios from "axios";
 import {store} from "../../../utils/Store";
 import {router} from "../../../utils/Routes";
-import md5 from "md5";
 
 const name = ref("")
 const age = ref()
@@ -50,11 +49,20 @@ const pin = ref("")
 const comPin = ref("")
 
 const signup = () => {
-  const params = {name: name.value, age: age.value, sex: sex.value, pin: md5(pin.value)};
+  const params = {
+    name: name.value,
+    age: age.value,
+    sex: sex.value,
+    pin: pin.value
+  };
   axios.post(API.USERS_V1, params)
       .then(resp => {
         console.log(resp.data);
-        const {acknowledged, insertedId, msg} = resp.data;
+        const {
+          acknowledged,
+          insertedId,
+          msg
+        } = resp.data;
         if (acknowledged) {
           store.commit('setToken', {token: insertedId});
           router.go(-1);
