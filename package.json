@@ -9,7 +9,6 @@
   "dependencies": {
     "axios": "latest",
     "element-plus": "latest",
-    "md5": "latest",
     "vue": "next",
     "vue-axios": "latest",
     "vue-i18n": "next",
