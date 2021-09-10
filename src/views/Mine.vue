@@ -16,25 +16,12 @@
 </template>
 
 <script setup>
-import {store} from "../utils/Store";
-</script>
-
-<script>
-import {defineAsyncComponent} from "vue";
+import {computed, defineAsyncComponent} from "vue";
+import {useStore} from "vuex";
 import Header from "./shared/Header.vue";
 
-export default {
-  name: "Mine",
-  components: {
-    Header,
-    AsyncComp: defineAsyncComponent(() => import("./mine/AsyncComp.vue"))
-  },
-  computed: {
-    token() {
-      return this.store.state.token;
-    }
-  }
-}
+const AsyncComp = defineAsyncComponent(() => import("./mine/AsyncComp.vue"));
+const token = computed(() => useStore().state.token);
 </script>
 
 <style scoped>

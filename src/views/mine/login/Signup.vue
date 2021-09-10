@@ -61,7 +61,6 @@ const signup = () => {
         const {
           acknowledged,
           insertedId,
-          msg
         } = resp.data;
         if (acknowledged) {
           store.commit('setToken', {token: insertedId});

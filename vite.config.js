@@ -5,7 +5,10 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
     plugins: [vue()],
     build: {
-        sourcemap: true
+        sourcemap: true,
+        // rollupOptions: {
+        //     external: 'public/style/app.css'
+        // }
     },
     // to explore on local networks
     server: {
