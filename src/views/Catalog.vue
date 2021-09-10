@@ -28,9 +28,7 @@ export default {
       slotName2: 'second'
     }
   },
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 

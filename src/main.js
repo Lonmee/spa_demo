@@ -12,4 +12,4 @@ createApp(App)
     .use(router)
     .use(VueAxios, axios)
     .use(ElementPlus)
-    .mount("#app")
+    .mount("#app");
