@@ -1,15 +1,17 @@
 <script setup>
 import {router} from "../../utils/Routes";
 
-const navNames = router.getRoutes().filter((r, i) => i < 4).map(r => r.name);
+const navNames = router.getRoutes()
+    .filter((r, i) => i < 4)
+    .map(r => r.name);
 const isShowNav = n => navNames.includes(n);
 </script>
 
 <template>
   <div
-    v-show="isShowNav($route.name)"
-    id="nav"
-    class="fixed-btm flex-row space-evenly alpha-white-bg box-shadow"
+      v-show="isShowNav($route.name)"
+      id="nav"
+      class="fixed-btm flex-row space-evenly alpha-white-bg box-shadow"
   >
     <router-link to="/">
       Home
