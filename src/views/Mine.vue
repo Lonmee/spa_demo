@@ -1,13 +1,13 @@
 <template>
   <div class="top-header-margin flex-column align-content-center">
     <Header title="Mine"/>
-    <div class="flex-row space-evenly" v-if="token === ''">
+    <div class="flex-row space-evenly" v-if="token.value === ''">
       <button @click="$router.push('login')">Login</button>
       <button @click="$router.push('signup')">Signup</button>
     </div>
     <div class="flex-column align-items-center" v-else>
       <p>token: {{ token }}</p>
-      <button id="logout" @click="store.commit('clearToken')">Logout</button>
+      <button id="logout" @click="useStore.commit('clearToken')">Logout</button>
     </div>
     <hr>
     <AsyncComp/>

@@ -7,7 +7,7 @@ export default defineConfig({
     build: {
         sourcemap: true,
         // rollupOptions: {
-        //     external: 'public/style/app_shared.css'
+        //     external: 'public/style/global_shared.css'
         // }
     },
     // to explore on local networks
