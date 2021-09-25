@@ -7,7 +7,7 @@
     </div>
     <div class="flex-column align-items-center" v-else>
       <p>token: {{ token }}</p>
-      <button id="logout" @click="useStore.commit('clearToken')">Logout</button>
+      <button id="logout" @click="clickHandler">Logout</button>
     </div>
     <hr>
     <AsyncComp/>
@@ -20,8 +20,15 @@ import {computed, defineAsyncComponent} from "vue";
 import {useStore} from "vuex";
 import Header from "./shared/Header.vue";
 
+const store = useStore();
+
 const AsyncComp = defineAsyncComponent(() => import("./mine/AsyncComp.vue"));
-const token = computed(() => useStore().state.token);
+
+const token = computed(() => store.state.token);
+
+function clickHandler() {
+  store.commit('clearToken');
+}
 </script>
 
 <style scoped>

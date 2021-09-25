@@ -20,6 +20,12 @@ export default defineConfig({
             // string shorthand
             /*'/foo': 'http://localhost:4567',*/
             // with options
+            // porxy @ nginx
+            // '/api': {
+            //     target: 'http://localhost',
+            //     changeOrigin: true,
+            // },
+            // directly koa
             '/api': {
                 target: 'http://localhost:8080',
                 changeOrigin: true,
