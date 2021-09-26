@@ -12,6 +12,11 @@
     <hr>
     <AsyncComp/>
     <address>北京石景山 古城南里一号楼703</address>
+    <div>
+      <h3>3rd login</h3>
+      <label>wechat:</label>
+      <input type="text">
+    </div>
   </div>
 </template>
 
