@@ -1,7 +1,7 @@
 <template>
   <div class="top-header-margin flex-column align-content-center">
     <Header title="Mine"/>
-    <div class="flex-row space-evenly" v-if="token.value === ''">
+    <div class="flex-row space-evenly" v-if="token === ''">
       <button @click="$router.push('login')">Login</button>
       <button @click="$router.push('signup')">Signup</button>
     </div>

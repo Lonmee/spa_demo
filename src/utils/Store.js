@@ -22,6 +22,7 @@ export const store = createStore({
             state.token = '';
             state.userInfo = {};
             Cookie.clear('token');
+            this.dispatch('getUserInfo');
         },
         setUserInfo(state, info) {
             state.userInfo = info;
