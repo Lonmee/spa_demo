@@ -22,7 +22,7 @@ export const store = createStore({
             state.token = '';
             state.userInfo = {};
             Cookie.clear('token');
-            this.dispatch('getUserInfo');
+            this.dispatch('logOut');
         },
         setUserInfo(state, info) {
             state.userInfo = info;
@@ -32,6 +32,12 @@ export const store = createStore({
         getUserInfo() {
             axios.get(API.USERS_V1)
                 .then(resp => this.commit('setUserInfo', resp.data))
+                .catch(console.error);
+
+        },
+        logOut() {
+            axios.delete(API.SIGN)
+                .then(console.log)
                 .catch(console.error);
         }
     }
