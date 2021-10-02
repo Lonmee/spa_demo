@@ -14,6 +14,10 @@
         <label>sex:</label>
         <div>{{ userInfo.sex }}</div>
       </div>
+      <div class="flex-row">
+        <label>des:</label>
+        <div>{{ infoStr }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -22,7 +26,8 @@
 import {useStore} from "vuex";
 import {computed} from "vue";
 
-const userInfo = computed(() => useStore().state.userInfo);
+const userInfo = computed(() => useStore().state.users.info);
+const infoStr = computed(() => useStore().getters.userInfo);
 </script>
 
 <style scoped>

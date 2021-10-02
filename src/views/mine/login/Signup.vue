@@ -37,11 +37,10 @@
 <script setup>
 import Header from "../../shared/Header.vue";
 import {ref} from "vue";
-import {API} from "../../../utils/Remote";
-import axios from "axios";
-import {store} from "../../../utils/Store";
-import {router} from "../../../utils/Routes";
+import {router} from "../../../route/Routes";
+import {useStore} from "vuex";
 
+const store = useStore();
 const name = ref("")
 const age = ref()
 const sex = ref("male")
@@ -55,21 +54,10 @@ const signup = () => {
     sex: sex.value,
     pin: pin.value
   };
-  axios.post(API.USERS_V1, params)
-      .then(resp => {
-        console.log(resp.data);
-        const {
-          acknowledged,
-          insertedId,
-        } = resp.data;
-        if (acknowledged) {
-          store.commit('setToken', {token: insertedId});
-          router.go(-1);
-        } else {
-          alert('昵称已占用');
-        }
-      })
-      .catch(console.error);
+  store
+      .dispatch("signup", params)
+      .then(() => router.go(-1))
+      .catch(reason => alert(reason));
 }
 </script>
 

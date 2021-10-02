@@ -25,14 +25,12 @@ import {computed, defineAsyncComponent} from "vue";
 import {useStore} from "vuex";
 import Header from "./shared/Header.vue";
 
-const store = useStore();
-
+const {commit, state} = useStore();
 const AsyncComp = defineAsyncComponent(() => import("./mine/AsyncComp.vue"));
-
-const token = computed(() => store.state.token);
+const token = computed(() => state.users.token);
 
 function clickHandler() {
-  store.commit('clearToken');
+  commit('clearToken');
 }
 </script>
 

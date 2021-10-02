@@ -1,6 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import Home from '../views/Home.vue';
-import Login from '../views/mine/login/Login.vue';
 
 const routes = [
     // stay
@@ -54,7 +53,7 @@ export const router = createRouter({
     routes,
 });
 
-router.beforeEach((to, from) => {
-    // for area back
-    from.params.mc && (to.params.mc = from.params.mc);
-});
+// router.beforeEach((to, from) => {
+//     // for area back
+//     from.params.mc && (to.params.mc = from.params.mc);
+// });

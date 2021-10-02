@@ -2,9 +2,8 @@
 import BtmNav from "./views/shared/BtmNav.vue";
 import {useStore} from "vuex";
 
-const {token} = useStore().state;
-token && useStore()
-    .dispatch('getUserInfo');
+const {getters, dispatch} = useStore();
+getters.token && dispatch('getUserInfo');
 </script>
 
 <template>

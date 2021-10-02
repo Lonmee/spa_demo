@@ -1,5 +1,5 @@
 <script setup>
-import {COUNTRIES} from "../../../utils/data/Countries";
+import {COUNTRIES} from "../../../data/Countries";
 import Header from "../../shared/Header.vue";
 </script>
 
