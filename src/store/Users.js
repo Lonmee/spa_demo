@@ -1,6 +1,7 @@
 import {Cookie} from "../utils/Cookie";
 import axios from "axios";
 import {API} from "../utils/Remote";
+import el from "element-plus/packages/locale/lang/el";
 
 export const users = {
     state: {
@@ -36,20 +37,16 @@ export const users = {
         }
     },
     actions: {
-        signup({commit}, params) {
+        signup({commit, dispatch}, params) {
             return new Promise((resolve, reject) => {
                 axios.post(API.USERS_V1, params)
-                    .then(resp => {
-                        const {
-                            code,
-                            info,
-                            msg,
-                        } = resp.data;
-                        if (code == 200) {
-                            commit('setToken', info);
-                            resolve(info);
+                    .then(({status, data, statusText}) => {
+                        if (status == 200) {
+                            commit('setToken', data.insertedId);
+                            dispatch('getUserInfo');
+                            resolve(data);
                         } else {
-                            reject(msg);
+                            reject(statusText);
                         }
                     })
                     .catch(reason => console.error(reason));
@@ -58,19 +55,25 @@ export const users = {
         getUserInfo({commit}) {
             axios.get(API.USERS_V1)
                 // .then(resp => state.userInfo = resp.data)
-                .then(({data}) => commit('setInfo', data.info))
+                .then(({status, data, statusText}) => {
+                    if (status == 200) {
+                        commit('setInfo', data);
+                    } else {
+                        alert(statusText);
+                    }
+                })
                 .catch(console.error);
         },
         login({commit}, params) {
             return new Promise((resolve, reject) => {
                 axios.post(API.SIGN, params)
-                    .then(({data}) => {
-                        if (data.code == 200) {
-                            commit('setToken', data.info._id);
-                            commit('setInfo', data.info);
+                    .then(({status, data, statusText}) => {
+                        if (status == 200) {
+                            commit('setToken', data._id);
+                            commit('setInfo', data);
                             resolve(data._id);
                         } else {
-                            reject(data.msg);
+                            reject(statusText);
                         }
                     })
                     .catch(reason => console.error(reason));
