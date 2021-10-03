@@ -52,7 +52,7 @@ export const users = {
             })
         },
         getUserInfo({commit}) {
-            axios.get(API.USERS_V1, {withCredentials: true})
+            axios.get(API.USERS_V1)
                 // .then(resp => state.userInfo = resp.data)
                 .then(({status, data, statusText}) => {
                     if (status == 200) {

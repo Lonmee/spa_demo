@@ -1,29 +1,20 @@
-const
-    // HOST_TYPE = 'proxy', // using vite proxy
-    HOST_TYPE = 'local',
-    // HOST_TYPE = 'remote',
-    PROXY_HOST = 'api/',
-    LOCAL_HOST = 'https://localhost:8081/',
-    REMOTE_HOST = 'https://localhost/api/';
+import axios from "axios";
 
-/**
- * cros情况下axios需手动添加"withCredentials: true"
- * 以便get请求携带cookie
- * @param type
- * @returns {string}
- */
-function host(type) {
-    switch (type) {
-        case 'proxy':
-            return PROXY_HOST;
-        case 'local':
-            return LOCAL_HOST;
-        case 'remote':
-            return REMOTE_HOST;
-    }
+const host = {
+    PROXY: '/api',
+    LOCAL: 'https://localhost:8081',
+    REMOTE: 'https://localhost/api',
 }
+axios.defaults.baseURL = host.LOCAL;
+// 默认情况下，跨源请求不提供凭据(cookie、HTTP认证及客户端SSL证明等)。
+axios.defaults.withCredentials = axios.defaults.baseURL !== host.PROXY;
+// axios.defaults.auth = {
+//     username: '',
+//     password: '',
+// };
 
 export const API = {
-    USERS_V1: host(HOST_TYPE) + '1/users/',
-    SIGN: host(HOST_TYPE) + '1/log/'
+    USERS_V1: '/1/users',
+    SIGN: '/1/log',
 }
+
