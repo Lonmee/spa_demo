@@ -7,7 +7,7 @@
     </div>
     <div class="flex-column align-items-center" v-else>
       <p>token: {{ token }}</p>
-      <button id="logout" @click="clickHandler">Logout</button>
+      <button id="logout" @click="logoutClickHandler">Logout</button>
     </div>
     <hr>
     <AsyncComp/>
@@ -29,7 +29,7 @@ const {commit, state} = useStore();
 const AsyncComp = defineAsyncComponent(() => import("./mine/AsyncComp.vue"));
 const token = computed(() => state.users.token);
 
-function clickHandler() {
+function logoutClickHandler() {
   commit('clearToken');
 }
 </script>

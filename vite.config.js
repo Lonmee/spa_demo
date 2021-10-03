@@ -9,6 +9,7 @@ export default defineConfig({
     },
     // to explore on local networks
     server: {
+        https: true,
         host: '0.0.0.0',
         fs: {
             allow: ['..']

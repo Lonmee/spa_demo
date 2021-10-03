@@ -1,7 +1,6 @@
 import {Cookie} from "../utils/Cookie";
 import axios from "axios";
-import {API} from "../utils/Remote";
-import el from "element-plus/packages/locale/lang/el";
+import {API} from "../utils/API";
 
 export const users = {
     state: {
