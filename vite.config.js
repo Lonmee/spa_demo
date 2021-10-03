@@ -14,17 +14,17 @@ export default defineConfig({
         fs: {
             allow: ['..']
         },
-        proxy: {
-            // proxy @ nginx
-            // '/api': 'http://localhost'
-
-            // proxy @ koa
-            '/api': {
-                target: 'http://localhost:8080',
-                // target: 'https://localhost:8081',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, '')
-            }
-        }
+        // proxy: {
+        //     // proxy @ nginx
+        //     // '/api': 'http://localhost'
+        //
+        //     // proxy @ koa
+        //     '/api': {
+        //         target: 'http://localhost:8080',
+        //         // target: 'https://localhost:8081',
+        //         changeOrigin: true,
+        //         rewrite: (path) => path.replace(/^\/api/, '')
+        //     }
+        // }
     }
 })
