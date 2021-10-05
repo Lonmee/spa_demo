@@ -4,6 +4,7 @@ import {useStore} from "vuex";
 
 const {getters, dispatch} = useStore();
 getters.token && dispatch('getUserInfo');
+document.title = `SPA @ ${import.meta.env.MODE}`;
 </script>
 
 <template>
