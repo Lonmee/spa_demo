@@ -13,7 +13,7 @@ const host = {
 }
 axios.defaults.baseURL = import.meta.env.DEV ? host.LOCAL : host.LOCAL_PROXY;
 // 默认情况下，跨源请求不提供凭据(cookie、HTTP认证及客户端SSL证明等)。
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = axios.defaults.baseURL === host.LOCAL;
 // axios.defaults.auth = {
 //     username: '',
 //     password: '',
