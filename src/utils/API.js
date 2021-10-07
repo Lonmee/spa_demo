@@ -9,7 +9,7 @@ import axios from "axios";
 const host = {
     LOCAL_PROXY: '/api',
     LOCAL: 'https://localhost:8081',
-    REMOTE_PROXY: 'https://localhost/api',
+    REMOTE_PROXY: 'https://www.lonmee.com/api',
 }
 axios.defaults.baseURL = import.meta.env.DEV ? host.LOCAL : host.LOCAL_PROXY;
 // 默认情况下，跨源请求不提供凭据(cookie、HTTP认证及客户端SSL证明等)。
