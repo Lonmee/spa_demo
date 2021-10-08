@@ -1,55 +1,5 @@
 <script setup>
 import Header from "../../shared/Header.vue";
-
-const props = defineProps({
-  mc: String
-})
-</script>
-
-<script>
-import {Cookie} from "../../../utils/Cookie";
-
-export default {
-  name: "Login",
-  data() {
-    return {
-      cdId: NaN,
-      cd: 0,
-      phoneNumber: '',
-      smsCode: '',
-      pin: '',
-      selected: ''
-    }
-  },
-  unmounted() {
-    isNaN(this.cdId) || clearInterval(this.cdId);
-  },
-  methods: {
-    sendSms() {
-      let params = {
-        u_id: '+' + (this.mc || '86') + '-' + this.phoneNumber,
-        type: 'staff'
-      }
-      login()
-      {
-        let params = {
-          sso_login_agent: "shop",
-          sso_user_id: '+' + (this.mc || '86') + '-' + this.phoneNumber,
-          sso_user_pwd: "ed2e19985ad3a06c810efa1e53e70832" // md5 twice
-        }
-        this.axios.post('http://localhost:8080/1/users/', params)
-            .then(r => {
-              r;
-              let token = "GH1.1.1689020474.1484362313";
-              this.$store.commit('setToken', {token});
-              Cookie.set('token', token);
-              this.$router.go(-1);
-            })
-            .catch(console.error);
-      }
-    }
-  }
-}
 </script>
 
 <template>
