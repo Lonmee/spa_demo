@@ -11,7 +11,10 @@ export default defineConfig({
     server: {
         host: '0.0.0.0',
         port: 3001,
-        https: true,
+        https: {
+            cert: '/usr/local/etc/nginx/ssl/server.crt',
+            key: '/usr/local/etc/nginx/ssl/server.key.unsecure',
+        },
         fs: {
             allow: ['..']
         },
