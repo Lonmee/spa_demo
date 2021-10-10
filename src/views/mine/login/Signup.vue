@@ -37,7 +37,7 @@
 <script setup>
 import Header from "../../shared/Header.vue";
 import {ref} from "vue";
-import {router} from "../../../route/Routes";
+import router from "../../../route/Routes";
 import {useStore} from "vuex";
 
 const store = useStore();

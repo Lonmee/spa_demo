@@ -5,7 +5,7 @@ import CatalogRoutes from "./CatalogRoutes";
 import CartRoutes from "./CartRoutes";
 import MineRoutes from "./MineRoutes";
 
-export const router = createRouter({
+const router = createRouter({
     history: createWebHistory(),
     routes: HomeRoutes
         .concat(ShowRoutes)
@@ -14,12 +14,14 @@ export const router = createRouter({
         .concat(MineRoutes)
 });
 
-router.beforeEach((to, from) => {
-    // for area back
-    // from.params.mc && (to.params.mc = from.params.mc);
-    console.log('going form: ', from, 'to: ', to);
-});
+// router.beforeEach((to, from) => {
+//     // for area back
+//     // from.params.mc && (to.params.mc = from.params.mc);
+//     console.log('going form: ', from, 'to: ', to);
+// })
+//
+// router.afterEach((to, from) => {
+//     console.log('gone form: ', from, 'to: ', to);
+// });
 
-router.afterEach((to, from) => {
-    console.log('gone form: ', from, 'to: ', to);
-});
+export default router;

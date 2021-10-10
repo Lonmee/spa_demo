@@ -2,8 +2,8 @@
 import BtmNav from "./views/shared/BtmNav.vue";
 import {useStore} from "vuex";
 
-const {getters, dispatch} = useStore();
-getters.token && dispatch('getUserInfo');
+const {state: {users: {token}}, dispatch} = useStore();
+token && dispatch('getUserInfo');
 document.title = `SPA @ ${import.meta.env.MODE}`;
 </script>
 

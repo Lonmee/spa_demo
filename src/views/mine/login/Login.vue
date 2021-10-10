@@ -39,7 +39,7 @@
 import Header from "../../shared/Header.vue";
 import {useStore} from "vuex";
 import {ref} from "vue";
-import {router} from "../../../route/Routes";
+import router from "../../../route/Routes";
 
 const
     name = ref(""),

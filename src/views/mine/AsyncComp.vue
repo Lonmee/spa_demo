@@ -4,15 +4,15 @@
     <div id="content" class="flex-column">
       <div class="flex-row">
         <label>name:</label>
-        <div>{{ userInfo.name }}</div>
+        <div>{{ info.name }}</div>
       </div>
       <div class="flex-row">
         <label>age:</label>
-        <div>{{ userInfo.age }}</div>
+        <div>{{ info.age }}</div>
       </div>
       <div class="flex-row">
         <label>sex:</label>
-        <div>{{ userInfo.sex }}</div>
+        <div>{{ info.sex }}</div>
       </div>
       <div class="flex-row">
         <label>des:</label>
@@ -23,10 +23,11 @@
 </template>
 
 <script setup>
-import {useStore} from "vuex";
 import {computed} from "vue";
+import {useStore} from "vuex";
 
-const userInfo = computed(() => useStore().state.users.info);
+// const {info} = toRefs(useStore().state.users)
+const info = computed(() => useStore().state.users.info);
 const infoStr = computed(() => useStore().getters.userInfo);
 </script>
 

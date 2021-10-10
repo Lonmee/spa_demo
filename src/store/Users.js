@@ -12,9 +12,6 @@ export const users = {
         token: Cookies.get('token'),
     },
     getters: {
-        token: (state) => {
-            return state.token;
-        },
         userInfo: (state) => {
             const {name, sex, age} = state.info;
             return `${name}-${sex}-${age}`;
@@ -26,7 +23,7 @@ export const users = {
             Cookies.set('token', token)
         },
         clearToken(state) {
-            state.token = '';
+            state.token = undefined;
             state.info = {};
             Cookies.remove('token');
             this.dispatch('logOut');

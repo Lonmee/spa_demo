@@ -1,5 +1,5 @@
 <script setup>
-import {router} from "../../route/Routes";
+import router from "../../route/Routes";
 
 const navNames = router.getRoutes()
     .filter((r, i) => i < 4)
