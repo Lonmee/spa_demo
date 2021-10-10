@@ -1,6 +1,6 @@
 import axios from "axios";
 import Cookies from 'js-cookie'
-import API from "../utils/API";
+import API from "../remote/API";
 
 export const users = {
     state: {

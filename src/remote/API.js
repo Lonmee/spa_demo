@@ -3,7 +3,7 @@ import axios from "axios";
 /**
  * LOCAL_PROXY: same site with 'api' proxy
  * LOCAL: same site without proxy (CORS)
- * REMOTE_PROXY: remote with 'api' proxy
+ * REMOTE_PROXY: remote with 'api' proxy®
  * @type {{LOCAL_PROXY: string, LOCAL: string, REMOTE_PROXY: string}}
  */
 const host = {
