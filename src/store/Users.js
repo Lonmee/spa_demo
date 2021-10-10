@@ -1,6 +1,6 @@
-import {Cookie} from "../utils/Cookie";
 import axios from "axios";
-import {API} from "../utils/API";
+import Cookies from 'js-cookie'
+import API from "../utils/API";
 
 export const users = {
     state: {
@@ -9,7 +9,7 @@ export const users = {
             age: '',
             sex: '',
         },
-        token: Cookie.get('token'),
+        token: Cookies.get('token'),
     },
     getters: {
         token: (state) => {
@@ -23,12 +23,12 @@ export const users = {
     mutations: {
         setToken(state, token) {
             state.token = token;
-            Cookie.set('token', token)
+            Cookies.set('token', token)
         },
         clearToken(state) {
             state.token = '';
             state.info = {};
-            Cookie.clear('token');
+            Cookies.remove('token');
             this.dispatch('logOut');
         },
         setInfo(state, info) {
@@ -55,7 +55,7 @@ export const users = {
             axios.get(API.USERS_V1)
                 // .then(resp => state.userInfo = resp.data)
                 .then(({status, data, statusText}) => {
-                    if (status == 200) {
+                    if (status === 200) {
                         commit('setInfo', data);
                     } else {
                         alert(statusText);
@@ -67,7 +67,7 @@ export const users = {
             return new Promise((resolve, reject) => {
                 axios.post(API.SIGN, params)
                     .then(({status, data, statusText}) => {
-                        if (status == 200) {
+                        if (status === 200) {
                             commit('setToken', data._id);
                             commit('setInfo', data);
                             resolve(data._id);

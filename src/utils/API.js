@@ -18,7 +18,9 @@ axios.defaults.withCredentials = axios.defaults.baseURL === host.LOCAL;
 //     username: '',
 //     password: '',
 // };
-export const API = {
+const API = {
     USERS_V1: '/1/users',
     SIGN: '/1/log',
 }
+
+export default API;
