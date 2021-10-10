@@ -14,7 +14,7 @@ const isShowNav = n => navNames.includes(n);
       class="fixed-btm flex-row space-evenly alpha-white-bg box-shadow"
   >
     <router-link to="/">
-      Home
+      Show
     </router-link>
     <router-link to="/catalog">
       Catalog

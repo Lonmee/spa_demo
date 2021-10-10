@@ -1,59 +1,25 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import Home from '../views/Home.vue';
-
-const routes = [
-    // stay
-    {
-        name: 'home',
-        path: '/',
-        component: Home
-    },
-    // lazy
-    {
-        name: 'catalog',
-        path: '/catalog',
-        component: () => import('../views/Catalog.vue')
-    },
-    {
-        name: 'cart',
-        path: '/cart',
-        component: () => import('../views/Cart.vue')
-    },
-    {
-        name: 'mine',
-        path: '/mine',
-        component: () => import('../views/Mine.vue')
-    },
-    {
-        name: 'login',
-        path: '/login',
-        component: () => import('../views/mine/login/Login.vue'),
-        props: true
-    },
-    {
-        name: 'login-area',
-        path: '/login-area',
-        component: () => import('../views/mine/login/LoginArea.vue'),
-        props: true
-    },
-    {
-        name: 'signup',
-        path: '/signup',
-        component: () => import('../views/mine/login/Signup.vue')
-    },
-    {
-        name: 'pin-recover',
-        path: '/pin-recover',
-        component: () => import('../views/mine/login/PinRecover.vue')
-    }
-];
+import HomeRoutes from "./HomeRoutes";
+import ShowRoutes from "./ShowRoutes";
+import CatalogRoutes from "./CatalogRoutes";
+import CartRoutes from "./CartRoutes";
+import MineRoutes from "./MineRoutes";
 
 export const router = createRouter({
     history: createWebHistory(),
-    routes,
+    routes: HomeRoutes
+        .concat(ShowRoutes)
+        .concat(CatalogRoutes)
+        .concat(CartRoutes)
+        .concat(MineRoutes)
 });
 
-// router.beforeEach((to, from) => {
-//     // for area back
-//     from.params.mc && (to.params.mc = from.params.mc);
-// });
+router.beforeEach((to, from) => {
+    // for area back
+    // from.params.mc && (to.params.mc = from.params.mc);
+    console.log('going form: ', from, 'to: ', to);
+});
+
+router.afterEach((to, from) => {
+    console.log('gone form: ', from, 'to: ', to);
+});
