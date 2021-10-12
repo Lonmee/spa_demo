@@ -20,7 +20,7 @@ export const users = {
     mutations: {
         setToken(state, token) {
             state.token = token;
-            Cookies.set('token', token)
+            Cookies.set('token', token, {expires: 7});
         },
         clearToken(state) {
             state.token = undefined;
