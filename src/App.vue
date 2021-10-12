@@ -17,3 +17,7 @@ document.title = `SPA @ ${import.meta.env.MODE}`;
     <btm-nav/>
   </div>
 </template>
+
+<style lang="less">
+@import "src/appAss/style/global_shared";
+</style>

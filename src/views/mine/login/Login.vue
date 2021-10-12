@@ -55,7 +55,7 @@ function login() {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 #logo {
   width: 50%;
 }
@@ -66,20 +66,20 @@ function login() {
 
 .input {
   padding: 0 20px;
-}
 
-.input label {
-  width: 100px;
-  text-align: left;
-}
+  label {
+    width: 100px;
+    text-align: left;
+  }
 
-.input input {
-  width: 100%;
-  text-align: left;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom-width: 1px;
+  input {
+    width: 100%;
+    text-align: left;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 1px;
+  }
 }
 
 div .item {
