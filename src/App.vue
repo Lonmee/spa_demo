@@ -19,5 +19,5 @@ document.title = `SPA @ ${import.meta.env.MODE}`;
 </template>
 
 <style lang="less">
-@import "src/appAss/style/global_shared";
+@import "assets/style/app";
 </style>

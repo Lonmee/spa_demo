@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
     plugins: [vue()],
     build: {
-        sourcemap: true,
+        // sourcemap: true,
     },
     // to explore on local networks
     server: {

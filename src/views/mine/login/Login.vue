@@ -3,7 +3,7 @@
     <Header back="true" title="Login"/>
     <div class="flex-column top-header-margin">
       <div class="logo-container">
-        <img id="logo" src="../../../appAss/img/logo@2x.png">
+        <img id="logo" alt="logo" src="../../../assets/img/logo@2x.png">
       </div>
       <div class="input">
         <div class="flex-row">
