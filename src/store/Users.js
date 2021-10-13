@@ -37,7 +37,7 @@ export const users = {
             return new Promise((resolve, reject) => {
                 axios.post(API.USERS_V1, params)
                     .then(({status, data, statusText}) => {
-                        if (status == 200) {
+                        if (status === 200) {
                             commit('setToken', data.insertedId);
                             dispatch('getUserInfo');
                             resolve(data);
@@ -77,7 +77,7 @@ export const users = {
         },
         logOut() {
             axios.delete(API.SIGN)
-                .then(console.log)
+                .then(resp => resp.status === 200 && console.log('logout'))
                 .catch(console.error);
         }
     }
