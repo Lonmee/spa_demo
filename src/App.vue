@@ -8,14 +8,12 @@ document.title = `SPA @ ${import.meta.env.MODE}`;
 </script>
 
 <template>
-  <div>
-    <router-view class="flex-1 content" @dblclick.prevent #="{ Component }">
-      <keep-alive>
-        <component :is="Component"/>
-      </keep-alive>
-    </router-view>
-    <btm-nav/>
-  </div>
+  <router-view class="flex-1 content" @dblclick.prevent #="{ Component }">
+    <keep-alive>
+      <component :is="Component"/>
+    </keep-alive>
+  </router-view>
+  <btm-nav/>
 </template>
 
 <style lang="less">

@@ -1,6 +1,6 @@
 <script setup>
-import SearchHeader from "./shared/SearchHeader.vue";
-import FloatBtn from "./shared/FloatBtn.vue";
+import SearchHeader from "./show/SearchHeader.vue";
+import FloatBtn from "./show/FloatBtn.vue";
 </script>
 
 <template>
